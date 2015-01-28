@@ -1,0 +1,95 @@
+\NeedsTeXFormat{LaTeX2e}
+\ProvidesPackage{uabbeamer}[2014/03/02 UABHW Package v0.01]
+% Provides packages and settings for presentation.
+
+% Required Packages -------
+
+% Encoding packages.
+\RequirePackage[english]{babel}
+\RequirePackage[utf8]{inputenc}
+
+% UAB common package.
+\RequirePackage{uabbase}
+
+% Clean up footnotes.
+\RequirePackage{perpage}
+\MakePerPage{footnote}
+\renewcommand*{\thefootnote}{\fnsymbol{footnote}}
+
+% Settings -------
+
+% Fixes size warning.
+\let\Tiny = \tiny
+
+% Presentation style.
+\mode<presentation>{%
+  \usetheme{PaloAlto}
+  \usecolortheme{uab}
+  \setbeamercovered{invisible}
+}
+
+% Logo
+\newcommand{\uablogo}[1]{%
+  \addtobeamertemplate{headline}{}{%
+    \begin{tikzpicture}[remember picture,overlay]
+      \node[anchor=north east,yshift=-5pt,xshift=-5pt] at (current page.north east) {%
+        \includegraphics[height=24pt]{#1}
+      };
+    \end{tikzpicture}
+  }
+}
+
+% Turn off nav symbols.
+\newcommand{\navoff}{%
+  \setbeamertemplate{navigation symbols}{}
+}
+
+% Uncover stepwise.
+\newcommand{\stepwiseuncover}{%
+  \beamerdefaultoverlayspecification{<+->}
+}
+
+% Repeat TOC
+\newcommand{\repeattoc}{%
+  \AtBeginSection[]
+  {%
+    \begin{frame}<beamer>
+    \frametitle{Outline}
+    \framesubtitle{\ }
+    \tableofcontents[currentsection]
+    \end{frame}
+  }
+}
+
+% Title Frame
+\newcommand{\titleframe}{%
+  \begin{frame}
+  \titlepage
+  \end{frame}
+}
+
+% Outline Frame
+\newcommand{\outlineframe}{%
+  \begin{frame}
+  \frametitle{Outline}
+  \framesubtitle{\ }
+  \tableofcontents
+  % You might wish to add the option [pausesections]
+  \end{frame}
+}
+
+% UAB Institute
+\newcommand{\uabinst}[3]{%
+  \inst{#1}
+  #2\\
+  #3\\
+  \UAB
+}
+\newcommand{\uabinstsolo}[2]{%
+  #1\\
+  #2\\
+  \UAB
+}
+
+
+\endinput

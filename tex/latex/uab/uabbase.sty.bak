@@ -1,0 +1,45 @@
+\NeedsTeXFormat{LaTeX2e}
+\ProvidesPackage{uabbase}[2014/03/03 UABBase Package v0.01]
+% Requires packages common to all document classes.
+
+% Math packages.
+\RequirePackage{amsmath}
+\RequirePackage{amssymb}
+\RequirePackage{amsthm}
+\RequirePackage{bm}
+\RequirePackage{commath}
+\RequirePackage{mathtools}
+\RequirePackage{array}
+
+% Units packages.
+\RequirePackage{siunitx}
+
+% Color packages.
+\PassOptionsToPackage{table}{xcolor}
+%\PassOptionsToPackage{hyperref}{xcolor}
+\RequirePackage{xcolor}
+
+% Code file importation packages.
+\RequirePackage{fancyvrb}
+\RequirePackage{minted}
+\RequirePackage{url}
+
+% Table packages.
+\RequirePackage{tabulary}
+
+% Float packages.
+\RequirePackage{caption}
+\RequirePackage{subcaption}
+
+% Citation packages.
+\RequirePackage{cite}
+
+% Drawing packages.
+\RequirePackage{tikz}
+
+% Graphicx package.
+\RequirePackage{graphicx}
+\RequirePackage{epstopdf}
+
+% UAB Command package.
+\RequirePackage{uabcommand}

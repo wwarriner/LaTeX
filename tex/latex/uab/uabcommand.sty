@@ -1,0 +1,76 @@
+\NeedsTeXFormat{LaTeX2e}
+\ProvidesPackage{uabcommand}[2014/03/03 UABCommand Package v0.05]
+% Requires use of uabcommon package!
+
+% UAB text.
+\newcommand{\UAB}{University of Alabama at Birmingham}
+\newcommand{\SOE}{School of Engineering}
+\newcommand{\MSE}{Materials Science and Engineering}
+\newcommand{\mse}{materials science and engineering}
+\newcommand{\DeptMSE}{Department of \MSE}
+
+% Closed radix command.
+\RequirePackage{clsradix}
+
+% Renew commands from commath for good typography of 
+% differentials i.e. dif Dif od pd
+\renewcommand{\dif}{
+  \text{d}
+}
+\renewcommand{\Dif}{
+  \text{D}
+}
+\renewcommand{\od}[3][]{
+  \frac{\dif^{#1}{#2}}{\dif{#3}^{#1}}
+}
+\renewcommand{\pd}[3][]{
+  \frac{\partial^{#1}{#2}}{\partial{#3}^{#1}}
+}
+\newcommand{\Dd}[3][]{
+  \frac{\Dif^{#1}{#2}}{\Dif{#3}^{#1}}
+}
+
+% Command for integrals in math enviornment.
+\newcommand{\integral}[4]{
+  \int_{#3}^{#4}\!#1\,\dif #2
+}
+
+\newcommand{\iintegral}[4]{
+  \iint_{#3}^{#4}\!#1\,\dif #2
+}
+
+\newcommand{\iiintegral}[4]{
+  \iiint_{#3}^{#4}\!#1\,\dif #2
+}
+
+\newcommand{\ointegral}[3]{
+  \oint_{#3}\!#1\,\dif #2
+}
+
+\newcommand{\oiintegral}[3]{
+  \oiint_{#3}\!#1\,\dif #2
+}
+
+\newcommand{\oiiintegral}[3]{
+  \oiiint_{#3}\!#1\,\dif #2
+}
+
+% Command for bold roman font in math environment (i.e. tensors)
+\newcommand{\bmrm}[1]{
+  \bm{\mathrm{#1}}
+}
+
+% Reference commands.
+\newcommand{\ppref}[1]{page~\pageref{#1}}
+%\newcommand{\figref}[1]{Figure~\ref{#1}}
+\newcommand{\tabref}[1]{Table~\ref{#1}}
+\newcommand{\eqnref}[1]{Eq.~\ref{#1}}
+\newcommand{\defref}[1]{Definition~\ref{#1}}
+%\newcommand{\secref}[1]{Section~\ref{#1}} in commath
+\newcommand{\secrefx}[1]{\secref{#1},~\nameref{#1},}
+\newcommand{\secrefxx}[1]{\secrefx{#1} on \ppref{#1}}
+%\newcommand{\appref}[1]{Appendix~\ref{#1}}
+\newcommand{\apprefx}[1]{\appref{#1},~\nameref{#1},}
+\newcommand{\apprefxx}[1]{\apprefx{#1} on \ppref{#1}}
+
+\endinput
