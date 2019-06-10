@@ -8,11 +8,11 @@
 % Itemization packages.
 \RequirePackage{enumitem}
 % Some basic lists for enumitem
-\newlist{alphalist}{enumerate}{1}
-\setlist[alphalist]{label=(\alph*),resume}
-\newlist{romanlist}{enumerate}{1}
-\setlist[romanlist]{label=(\roman*),resume}
-\newlist{numberlist}{enumerate}{1}
-\setlist[numberlist]{label=(\arabic*),resume}
-\newlist{dotlist}{enumerate}{1}
+\newlist{alphalist}{enumerate}{3}
+\setlist[alphalist]{label*=\alph*.,resume}
+\newlist{romanlist}{enumerate}{3}
+\setlist[romanlist]{label*=\roman*.,resume}
+\newlist{numberlist}{enumerate}{3}
+\setlist[numberlist]{label*=\arabic*.,resume}
+\newlist{dotlist}{enumerate}{3}
 \setlist[dotlist]{label=\textbullet,resume}

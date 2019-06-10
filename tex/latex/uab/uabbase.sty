@@ -18,21 +18,24 @@
 \PassOptionsToPackage{table}{xcolor}
 %\PassOptionsToPackage{hyperref}{xcolor}
 \RequirePackage{xcolor}
+\RequirePackage{soul}
+
+% Crossreference Packages
+\RequirePackage[capitalise]{cleveref}
 
 % Code file importation packages.
 \RequirePackage{fancyvrb}
-\RequirePackage{minted}
+\RequirePackage[newfloat]{minted}
 \RequirePackage{url}
 
 % Table packages.
+\RequirePackage{booktabs}
 \RequirePackage{tabulary}
 
 % Float packages.
 \RequirePackage{caption}
 \RequirePackage{subcaption}
-
-% Citation packages.
-\RequirePackage{cite}
+\newcommand{\csubref}[1]{(\subref{#1})}
 
 % Drawing packages.
 \RequirePackage{tikz}
@@ -40,7 +43,8 @@
 
 % Graphicx package.
 \RequirePackage{graphicx}
-\RequirePackage{epstopdf}
+\RequirePackage[outdir=./]{epstopdf}
+\RequirePackage{pgfgantt}
 
 % UAB Command package.
 \RequirePackage{uabcommand}
